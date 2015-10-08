@@ -28,13 +28,13 @@
         </div>
       </div>
     </div>
-    
+
     {% block content %}
     {% endblock %}
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfQxgWt-LSZcEmTEN8581Uq9SzZHnpuys&sensor=true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVgNLiza3lm7nKhmd-NBz2TV5TZsw5XPQ&sensor=true"></script>
     <script>
       function initialize_gmaps() {
       // initialize new google maps LatLng object
@@ -55,8 +55,8 @@
         position: myLatlng,
         title:"Hello World!"
       });
-
-      // draw some locations on the map
+/***
+      draw some locations on the map
       var hotelLocation = [40.705137, -74.007624];
       var restaurantLocations = [
         [40.705137, -74.013940],
@@ -87,8 +87,8 @@
           icon: '/images/star-3.png'
         });
       });
+*/
     }
-
     $(document).ready(function() {
       initialize_gmaps();
     });
@@ -154,5 +154,6 @@
       }]
     }];
   </script>
+  <script src="/scripts/responsive.js"></script>
   </body>
 </html>
