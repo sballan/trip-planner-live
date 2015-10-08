@@ -9,9 +9,9 @@ Side-Bar: Top
 
 
 Side-Bar: Bottom
-1. Add items to a day
-2. Delete individual items from a day
-3. Be able to switch days
++ 1. Add items to a day
++ 2. Delete individual items from a day
+- 3. Be able to switch days
 
 
 
