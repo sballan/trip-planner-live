@@ -1,3 +1,57 @@
+var Plan = function() {
+  this.days = [];
+}
+
+Plan.prototype.getDay = function(dayNum) {
+  return this.days[dayNum-1];
+}
+
+Plan.prototype.addDay = function() {
+  this.days.push(new Day());
+}
+
+var Day = function() {
+  this.hotel = null;
+  this.restaurants = [];
+  this.activities = [];
+}
+
+Day.prototype.addHotel = function(name) {
+  this.hotel = name;
+  return this;
+}
+
+Day.prototype.addRestaurant = function(name) {
+  this.restaurants.push(name);
+  return this;
+}
+
+Day.prototype.addActivity = function(name) {
+  this.activities.push(name);
+}
+
+Day.prototype.removeHotel = function(name) {
+  this.hotel = null;
+  return this;
+}
+
+Day.prototype.removeRestaurant = function(name) {
+  var index = this.restaurants.indexOf(name);
+  this.restaurants.splice(index, 1);
+  return this;
+}
+
+Day.prototype.removeActivity = function(name) {
+  var index = this.activities.indexOf(name);
+  this.activities.splice(index, 1);
+  return this;
+}
+
+
+
+
+
+
 $( document ).ready(function() {
   //var $catArray = [$('.hotel-item'), $('.restaurant-item'), $('.activity-item')]
   var catArray = ['.hotel', '.restaurant', '.activity']
@@ -26,42 +80,9 @@ $( document ).ready(function() {
 
   }
 
-  function makeItemHTML(name) {
-    return '<div class="itinerary-item">\n<span class="title">'+ name +'</span>' +
-    '<button class="btn btn-xs btn-danger remove btn-circle">x</button>\n</div>'
-  }
-
-
-
-
-
-
-  // $hotelDiv.children(".btn").on('click', function() {
-  //
-  // })
-  //
-  // $restaurantDiv.children(".btn").on('click', function() {
-  //
-  // })
-  //
-  // $activityDiv.children(".btn").on('click', function() {
-  //
-  // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
+
+function makeItemHTML(name) {
+  return '<div class="itinerary-item">\n<span class="title">'+ name +'</span>' +
+  '<button class="btn btn-xs btn-danger remove btn-circle">x</button>\n</div>'
+}
