@@ -1,5 +1,3 @@
-console.log("IM BEING LOADEDDD")
-
 $( document ).ready(function() {
   //var $catArray = [$('.hotel-item'), $('.restaurant-item'), $('.activity-item')]
   var catArray = ['.hotel', '.restaurant', '.activity']
@@ -8,22 +6,29 @@ $( document ).ready(function() {
 
   for(var i = 0; i < catArray.length; i++) {
     var category = catArray[i]
-    var $thisDiv = $(category + '-selector');
-    var $thisPlusButton = $thisDiv.children('.btn');
-    var $thisSelect = $thisDiv.children('select');
+    var $thisSelectorDiv = $(category + '-selector');
+    //var $thisItemDiv = $(category + '-item');
+
+    var $thisPlusButton = $thisSelectorDiv.children('.btn');
+    var $thisSelect = $thisSelectorDiv.children('select');
 
     clickHandlers[category + "-plus-button"] = $thisPlusButton;
 
     clickHandlers[category + "-plus-button"].on('click', function() {
       var $innerSelect = $(this.parentNode).children('select')[0].value.toString();
+      var itemClass = this.parentNode.className.toString() + '-item';
+      var $innerItemDiv = $('.' + itemClass)
+      console.dir($innerItemDiv)
 
-      console.log($innerSelect);
-
+      $innerItemDiv.append(makeItemHTML($innerSelect))
 
     })
 
+  }
 
-
+  function makeItemHTML(name) {
+    return '<div class="itinerary-item">\n<span class="title">'+ name +'</span>' +
+    '<button class="btn btn-xs btn-danger remove btn-circle">x</button>\n</div>'
   }
 
 

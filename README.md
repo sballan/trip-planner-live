@@ -4,7 +4,9 @@ Global:
 1. Selected locations should be focused on by the map
 
 Side-Bar: Top
-1. Be able to add each type of location
++ 1. Be able to select each type of location
++ 2. Be able to add each type of location
+
 
 Side-Bar: Bottom
 1. Add items to a day
